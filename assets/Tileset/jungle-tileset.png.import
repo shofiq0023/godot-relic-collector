@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d03pholuvmcss"
-path="res://.godot/imported/jungle-tileset.png-fd1aa20e84f0a601d3574bb07840c595.ctex"
+path="res://.godot/imported/jungle-tileset.png-90296ff86fd57b4fdd8952c4a2f4822b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Tileset/jungle-tileset.png"
-dest_files=["res://.godot/imported/jungle-tileset.png-fd1aa20e84f0a601d3574bb07840c595.ctex"]
+source_file="res://Assets/Tileset/jungle-tileset.png"
+dest_files=["res://.godot/imported/jungle-tileset.png-90296ff86fd57b4fdd8952c4a2f4822b.ctex"]
 
 [params]
 

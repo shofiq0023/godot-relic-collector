@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ca7x30uohlsd"
-path="res://.godot/imported/mid-air.png-1e0452f5a9f4f965c6cb9b312bcf1834.ctex"
+uid="uid://dlbbk1ahor4n6"
+path="res://.godot/imported/full jump animation.png-12a432fbfba92a9e27e6ed944a7cb50f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Player/mid-air.png"
-dest_files=["res://.godot/imported/mid-air.png-1e0452f5a9f4f965c6cb9b312bcf1834.ctex"]
+source_file="res://Assets/Player/full jump animation.png"
+dest_files=["res://.godot/imported/full jump animation.png-12a432fbfba92a9e27e6ed944a7cb50f.ctex"]
 
 [params]
 
