@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 const gravity = 1000.0;
-const maxHorizontalSpeed = 120.0;
+var maxHorizontalSpeed = 120.0;
 const horizontalAcceleration = 1300;
 const jumpVelocity = -330.0;
 const lerpValue = -40;
@@ -10,24 +10,34 @@ const jumpTerminationMultiplier = 3;
 func _physics_process(delta):
 	var moveVector = get_movement_vector();
 	
+	# Character movement acceleration
 	velocity.x += moveVector.x * horizontalAcceleration * delta;
 	
+	# linear interpolation
 	if (moveVector.x == 0):
 		velocity.x = lerp(0.0, velocity.x, pow(2, lerpValue * delta));
 	
 	velocity.x = clamp(velocity.x, -maxHorizontalSpeed, maxHorizontalSpeed);
 	
-	if (moveVector.y < 0 && is_on_floor()):
+	# Character jump
+	if (moveVector.y < 0 && (is_on_floor() || !$CoyoteTimer.is_stopped())):
 		velocity.y = jumpVelocity;
+		$CoyoteTimer.stop();
 	
+	# Jump termination acceleration
 	if (velocity.y < 0 && !Input.is_action_pressed("jump")):
 		velocity.y += gravity * jumpTerminationMultiplier * delta;
 	else:
 		velocity.y += gravity * delta;
 	
+	var was_on_floor = is_on_floor();
 	move_and_slide();
-	update_animation();
 	
+	if (was_on_floor && !is_on_floor()):
+		$CoyoteTimer.start();
+	
+	update_animation();
+
 func get_movement_vector():
 	var moveVector = Vector2.ZERO;
 	moveVector.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left");
@@ -61,4 +71,3 @@ func update_animation():
 
 	if (moveVector.x != 0):
 		$AnimatedSprite2D.flip_h = true if moveVector.x < 0 else false;
-

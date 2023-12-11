@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dlbbk1ahor4n6"
-path="res://.godot/imported/full jump animation.png-53aec19b9e66985b5550cf6f0208e59c.ctex"
+path="res://.godot/imported/full jump animation.png-12a432fbfba92a9e27e6ed944a7cb50f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Player/full jump animation.png"
-dest_files=["res://.godot/imported/full jump animation.png-53aec19b9e66985b5550cf6f0208e59c.ctex"]
+source_file="res://Assets/Player/full jump animation.png"
+dest_files=["res://.godot/imported/full jump animation.png-12a432fbfba92a9e27e6ed944a7cb50f.ctex"]
 
 [params]
 
