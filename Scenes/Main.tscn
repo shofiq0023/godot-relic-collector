@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bgtvo2sqi7obp"]
+[gd_scene load_steps=4 format=3 uid="uid://bgtvo2sqi7obp"]
 
 [ext_resource type="TileSet" uid="uid://dorjy1t4jrwge" path="res://Resources/TileMap/jungle-tile-map.tres" id="1_yymb5"]
 [ext_resource type="PackedScene" uid="uid://b77t7d3g3cpc4" path="res://Scenes/Player.tscn" id="2_4v1gi"]
+[ext_resource type="PackedScene" uid="uid://dh6mvdkhg68td" path="res://Scenes/GameCamera.tscn" id="3_w7m3m"]
 
 [node name="Main" type="Node2D"]
 
@@ -13,4 +14,4 @@ layer_0/tile_data = PackedInt32Array(262152, 393216, 10, 196616, 393216, 9, 1310
 [node name="Player" parent="." instance=ExtResource("2_4v1gi")]
 position = Vector2(0, -3)
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" parent="." instance=ExtResource("3_w7m3m")]
