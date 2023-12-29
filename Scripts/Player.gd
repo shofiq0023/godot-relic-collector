@@ -14,6 +14,7 @@ var ledgeGrabbing = false;
 @onready var rayGround = $RayGround;
 @onready var anim = $AnimatedSprite2D;
 @onready var coyoteTimer = $CoyoteTimer;
+@onready var rayEnableTimer = $RayEnableTimer;
 
 
 func _physics_process(delta):
@@ -37,10 +38,14 @@ func _physics_process(delta):
 		coyoteTimer.stop();
 		ledgeGrabbing = false;
 		rayDown.enabled = false;
+		rayEnableTimer.start();
 	
 	# Re-enable the ray cast after lading on ground
 	if (is_on_floor()):
 		rayDown.enabled = true;
+	
+	# Enable ray cast after a certain time
+	enableRayDown();
 	
 	## Jump termination acceleration
 	# Increase falling speed
@@ -61,6 +66,12 @@ func _physics_process(delta):
 		coyoteTimer.start();
 	
 	update_animation();
+
+
+# Enable ray cast after 0.25 second
+func enableRayDown():
+	await rayEnableTimer.timeout;
+	rayDown.enabled = true;
 
 
 func get_movement_vector():

@@ -255,6 +255,10 @@ script = ExtResource("1_wk4xd")
 wait_time = 0.15
 one_shot = true
 
+[node name="RayEnableTimer" type="Timer" parent="."]
+wait_time = 0.25
+one_shot = true
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_bu51k")
 animation = &"idle"
