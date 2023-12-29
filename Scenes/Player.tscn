@@ -262,3 +262,16 @@ autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_qtlyc")
+
+[node name="RayUp" type="RayCast2D" parent="."]
+position = Vector2(0, -26)
+target_position = Vector2(14, 0)
+
+[node name="RayDwn" type="RayCast2D" parent="."]
+position = Vector2(0, -17)
+target_position = Vector2(14, 0)
+
+[node name="RayGround" type="RayCast2D" parent="."]
+target_position = Vector2(0, 28)
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
