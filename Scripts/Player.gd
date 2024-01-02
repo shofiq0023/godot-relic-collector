@@ -3,7 +3,7 @@ extends CharacterBody2D
 const gravity = 1000.0;
 const horizontal_acceleration = 1300;
 const jump_velocity = -330.0;
-const lerp_value = -40;
+const lerp_value = -25;
 const jump_termination_multiplier = 3;
 
 var max_horizontal_speed = 120.0;
