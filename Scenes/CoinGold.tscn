@@ -1,0 +1,134 @@
+[gd_scene load_steps=13 format=3 uid="uid://co7nvy68isdqg"]
+
+[ext_resource type="Script" path="res://Scripts/CoinGold.gd" id="1_mxw67"]
+[ext_resource type="Texture2D" uid="uid://b38b338vyf5lj" path="res://assets/Coins & Gems/coins_gold.png" id="1_xhvi8"]
+
+[sub_resource type="Animation" id="Animation_fqsma"]
+resource_name = "pickup_animation"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0001, 0.1, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, 3), Vector2(0, -13), Vector2(0, -25)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(0, 0)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_pko04"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -6)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vehpl"]
+_data = {
+"idle": SubResource("Animation_pko04"),
+"pickup_animation": SubResource("Animation_fqsma")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gb2g7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xl53p"]
+atlas = ExtResource("1_xhvi8")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w0tts"]
+atlas = ExtResource("1_xhvi8")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uhk81"]
+atlas = ExtResource("1_xhvi8")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_68mv6"]
+atlas = ExtResource("1_xhvi8")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_leepq"]
+atlas = ExtResource("1_xhvi8")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_823o7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xl53p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w0tts")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uhk81")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_68mv6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_leepq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="CoinGold" type="Node2D"]
+script = ExtResource("1_mxw67")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "idle"
+libraries = {
+"": SubResource("AnimationLibrary_vehpl")
+}
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2147483648
+collision_mask = 2147483648
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_gb2g7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_823o7")
+autoplay = "default"
+frame_progress = 0.935409

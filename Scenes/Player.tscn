@@ -1,10 +1,13 @@
-[gd_scene load_steps=38 format=3 uid="uid://b77t7d3g3cpc4"]
+[gd_scene load_steps=39 format=3 uid="uid://b77t7d3g3cpc4"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_wk4xd"]
 [ext_resource type="Texture2D" uid="uid://dlbbk1ahor4n6" path="res://assets/Player/full jump animation.png" id="2_a7bxx"]
 [ext_resource type="Texture2D" uid="uid://cmljc0088ivbg" path="res://assets/Player/idle.png" id="2_caxwh"]
 [ext_resource type="Texture2D" uid="uid://u2mqsvovlrqx" path="res://assets/Player/run.png" id="3_pf5j4"]
 [ext_resource type="Texture2D" uid="uid://drlmoe5j7fyws" path="res://assets/Player/ledge grab.png" id="4_p4ih8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rb5pu"]
+radius = 19.2354
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_62xem"]
 atlas = ExtResource("2_a7bxx")
@@ -258,6 +261,13 @@ one_shot = true
 [node name="RayEnableTimer" type="Timer" parent="."]
 wait_time = 0.25
 one_shot = true
+
+[node name="PickupArea" type="Area2D" parent="."]
+collision_layer = 2147483648
+collision_mask = 2147483648
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea"]
+shape = SubResource("CircleShape2D_rb5pu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_bu51k")
