@@ -16,7 +16,6 @@ var ledge_grabbing = false;
 @onready var coyote_timer = $CoyoteTimer;
 @onready var ray_enable_timer = $RayEnableTimer;
 
-
 func _physics_process(delta):
 	var moveVector = get_movement_vector();
 	
@@ -65,7 +64,7 @@ func _physics_process(delta):
 	if (was_on_floor && !is_on_floor()):
 		coyote_timer.start();
 	
-	update_animation();
+	update_animation(moveVector);
 
 
 # Enable ray cast after 0.25 second
@@ -101,10 +100,12 @@ func handleLedgeDetection():
 		ledge_grabbing = false;
 
 
-func update_animation():
+func update_animation(moveVector):
 	var falling = false;
 	var jumping = true;
-	var moveVector = get_movement_vector();
+	
+	if (moveVector.x != 0):
+		anim.flip_h = true if moveVector.x < 0 else false;
 	
 	if (velocity.y < 0):
 		jumping = true;
@@ -128,9 +129,6 @@ func update_animation():
 		anim.play("fall");
 	elif (!falling && !jumping && moveVector.x == 0):
 		anim.play("idle");
-	
-	if (moveVector.x != 0):
-		anim.flip_h = true if moveVector.x < 0 else false;
 
 func _on_animated_sprite_2d_animation_finished():
 	if (anim.animation == "ledge_grab"):

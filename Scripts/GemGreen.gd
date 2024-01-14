@@ -1,5 +1,7 @@
 extends Node2D
 
+# This is a "premium" currency
+
 @onready var area2d = $Area2D;
 @onready var areaCollision = $Area2D/CollisionShape2D;
 @onready var anim = $AnimationPlayer;
