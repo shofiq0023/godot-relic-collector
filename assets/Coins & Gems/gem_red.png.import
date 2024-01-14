@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bl4gnnyjpdaa0"
-path="res://.godot/imported/gem_red.png-453d42663000cb3e57993b7973ab65ae.ctex"
+path="res://.godot/imported/gem_red.png-4849a21de96957716d7f49a812f0710f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Coins & Gems/gem_red.png"
-dest_files=["res://.godot/imported/gem_red.png-453d42663000cb3e57993b7973ab65ae.ctex"]
+source_file="res://Assets/Coins & Gems/gem_red.png"
+dest_files=["res://.godot/imported/gem_red.png-4849a21de96957716d7f49a812f0710f.ctex"]
 
 [params]
 

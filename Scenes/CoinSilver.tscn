@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://c3f27fiaioe4a"]
 
 [ext_resource type="Script" path="res://Scripts/CoinSilver.gd" id="1_no0js"]
-[ext_resource type="Texture2D" uid="uid://bueyo3mvp5303" path="res://assets/Coins & Gems/coins_silver.png" id="1_sbgyf"]
+[ext_resource type="Texture2D" uid="uid://bueyo3mvp5303" path="res://Assets/Coins & Gems/coins_silver.png" id="1_sbgyf"]
 
 [sub_resource type="Animation" id="Animation_02l85"]
 resource_name = "idle"
@@ -26,7 +26,7 @@ tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath("AnimatedSprite2D:position")
-tracks/0/interp = 1
+tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.4),
@@ -38,7 +38,7 @@ tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/path = NodePath("AnimatedSprite2D:scale")
-tracks/1/interp = 1
+tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.2, 0.4),
@@ -131,4 +131,4 @@ shape = SubResource("CircleShape2D_ld4ok")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_jip5b")
 autoplay = "default"
-frame_progress = 0.617027
+frame_progress = 0.482423

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bgtvo2sqi7obp"]
+[gd_scene load_steps=10 format=3 uid="uid://bgtvo2sqi7obp"]
 
 [ext_resource type="TileSet" uid="uid://dorjy1t4jrwge" path="res://Resources/TileMap/jungle-tile-map.tres" id="1_yymb5"]
 [ext_resource type="PackedScene" uid="uid://b77t7d3g3cpc4" path="res://Scenes/Player.tscn" id="2_4v1gi"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c3f27fiaioe4a" path="res://Scenes/CoinSilver.tscn" id="5_klnjy"]
 [ext_resource type="PackedScene" uid="uid://d10pkmlmqap05" path="res://Scenes/GemRed.tscn" id="6_xpn67"]
 [ext_resource type="PackedScene" uid="uid://niquuhd46lqt" path="res://Scenes/CoinRed.tscn" id="6_xspnv"]
+[ext_resource type="PackedScene" uid="uid://42nysr182np2" path="res://Scenes/Enemies/Slime.tscn" id="9_4e2he"]
 
 [node name="Main" type="Node2D"]
 
@@ -147,3 +148,6 @@ position = Vector2(1192, -56)
 
 [node name="GemRed3" parent="Gems" instance=ExtResource("6_xpn67")]
 position = Vector2(192, -264)
+
+[node name="Slime" parent="." instance=ExtResource("9_4e2he")]
+position = Vector2(88, 8)

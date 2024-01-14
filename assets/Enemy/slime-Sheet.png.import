@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwwk17xa0hryk"
-path="res://.godot/imported/plx-2.png-9b7588636da2ca04375e398c14add126.ctex"
+uid="uid://ui84l8aetpm3"
+path="res://.godot/imported/slime-Sheet.png-2c6d5f336531074159d3a292df9d7775.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Parallax BG/plx-2.png"
-dest_files=["res://.godot/imported/plx-2.png-9b7588636da2ca04375e398c14add126.ctex"]
+source_file="res://Assets/Enemy/slime-Sheet.png"
+dest_files=["res://.godot/imported/slime-Sheet.png-2c6d5f336531074159d3a292df9d7775.ctex"]
 
 [params]
 
