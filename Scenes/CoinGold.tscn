@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://co7nvy68isdqg"]
 
 [ext_resource type="Script" path="res://Scripts/CoinGold.gd" id="1_mxw67"]
-[ext_resource type="Texture2D" uid="uid://b38b338vyf5lj" path="res://Assets/Coins & Gems/coins_gold.png" id="1_xhvi8"]
+[ext_resource type="Texture2D" uid="uid://b38b338vyf5lj" path="res://assets/Coins & Gems/coins_gold.png" id="1_xhvi8"]
 
 [sub_resource type="Animation" id="Animation_pko04"]
 resource_name = "idle"
